@@ -23,9 +23,206 @@
             position: relative;
         }
 
-        /* SCREEN 1: MAIN GREETINGS ARCHIVE CANVAS */
+        /* SCREEN 0: WELCOME & AUDIO UNLOCK */
+        .welcome-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .welcome-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #2b2d42;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .enter-btn {
+            background: #111111;
+            color: #ffffff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .enter-btn:hover {
+            background: #333333;
+            transform: translateY(-2px);
+        }
+
+        /* SCREEN 1: COUNTDOWN & FANCY COLORFUL CAKE */
+        .lock-screen {
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Fancy Multi-Tier Colorful Cake */
+        .cake-system {
+            position: relative;
+            width: 260px;
+            height: 240px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .cake-stand {
+            width: 260px;
+            height: 14px;
+            background: #e5989b;
+            border: 3px solid #6d5959;
+            border-radius: 20px;
+            position: absolute;
+            bottom: 0;
+            box-shadow: 0 6px 0px rgba(0,0,0,0.05);
+        }
+
+        .tier-bottom {
+            width: 200px;
+            height: 80px;
+            background: #fff3b0; 
+            border: 3px solid #6d5959;
+            border-bottom: none;
+            border-radius: 16px 16px 0 0;
+            position: absolute;
+            bottom: 14px;
+            overflow: hidden;
+        }
+
+        .piped-frosting {
+            width: 100%;
+            height: 22px;
+            background-image: radial-gradient(circle at 15px 0, transparent 13px, #6d5959 14px, #ffb5a7 15px);
+            background-size: 30px 30px;
+            position: absolute;
+            top: 0;
+        }
+
+        .tier-top {
+            width: 130px;
+            height: 65px;
+            background: #fcd5ce; 
+            border: 3px solid #6d5959;
+            border-bottom: none;
+            border-radius: 12px 12px 0 0;
+            position: absolute;
+            bottom: 94px;
+            overflow: hidden;
+        }
+
+        .fancy-candle {
+            width: 12px;
+            height: 50px;
+            background: repeating-linear-gradient(
+                45deg,
+                #e63946,
+                #e63946 6px,
+                #ffffff 6px,
+                #ffffff 12px
+            );
+            border: 3px solid #6d5959;
+            position: absolute;
+            bottom: 159px;
+            border-radius: 4px;
+        }
+
+        .candle-wick {
+            width: 3px;
+            height: 10px;
+            background: #6d5959;
+            position: absolute;
+            bottom: 209px;
+        }
+
+        .fancy-flame {
+            width: 22px;
+            height: 32px;
+            background: radial-gradient(#ffdd00, #ff7b00);
+            border-radius: 50% 50% 20% 20%;
+            position: absolute;
+            bottom: 219px;
+            box-shadow: 0 0 25px #ffb703, 0 0 10px #ffb703;
+            animation: elegantFlicker 0.5s infinite alternate;
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes elegantFlicker {
+            0% { transform: scale(1) rotate(-2deg); }
+            100% { transform: scale(1.18) rotate(3deg); }
+        }
+
+        /* Giant Typography Clock */
+        .giant-clock-wrapper {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .time-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-number {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #2b2d42;
+            letter-spacing: -1px;
+        }
+
+        .time-label {
+            font-family: monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8d99ae;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .time-divider {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #e0e0e0;
+            line-height: 1;
+        }
+
+        .lock-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #8d99ae;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        /* SCREEN 2: MAIN DESKTOP ARCHIVE CANVAS */
         .desktop-canvas {
-            display: flex; 
+            display: none; 
             width: 900px;
             height: 550px;
             background: #ffffff;
@@ -34,7 +231,7 @@
             align-items: center;
             padding: 40px;
             gap: 60px;
-            animation: fadeIn 0.8s ease;
+            animation: fadeIn 1.5s ease;
         }
 
         .polaroid-wrapper {
@@ -230,7 +427,7 @@
             transform-origin: bottom right;
         }
 
-        /* SCREEN 2: THE INTERACTIVE PRANK WINDOW */
+        /* SCREEN 3: THE INTERACTIVE PRANK WINDOW */
         .prank-canvas {
             display: none;
             flex-direction: column;
@@ -254,7 +451,6 @@
             color: #111;
         }
 
-        /* Runaway Box Styling */
         .gift-target-box {
             font-size: 5rem;
             cursor: pointer;
@@ -265,7 +461,6 @@
             padding: 10px;
         }
 
-        /* Standard Minimal Dialog Prompt Boxes */
         .dialog-container {
             display: none;
             background: #ffffff;
@@ -323,7 +518,7 @@
             color: #333;
         }
 
-        /* FINAL UNLOCKED SCREEN MAP */
+        /* SCREEN 4: THE FINAL REVEAL CANVAS MAP */
         .reveal-canvas {
             display: none;
             flex-direction: column;
@@ -396,6 +591,52 @@
 </head>
 <body>
 
+    <audio id="birthday-song" loop src="birthday-song.mp3"></audio>
+
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-title">A Special Archive For Nay</div>
+        <button class="enter-btn" onclick="startExperience()">Open Box 🎁</button>
+    </div>
+
+    <div class="lock-screen" id="lock-screen">
+        <div class="cake-system">
+            <div class="fancy-flame" id="candle-flame"></div>
+            <div class="candle-wick"></div>
+            <div class="fancy-candle"></div>
+            <div class="tier-top">
+                <div class="piped-frosting"></div>
+            </div>
+            <div class="tier-bottom">
+                <div class="piped-frosting"></div>
+            </div>
+            <div class="cake-stand"></div>
+        </div>
+
+        <div class="lock-subtitle">Time Remaining</div>
+        
+        <div class="giant-clock-wrapper">
+            <div class="time-block">
+                <div class="time-number" id="box-days">00</div>
+                <div class="time-label">Days</div>
+            </div>
+            <div class="time-divider">:</div>
+            <div class="time-block">
+                <div class="time-number" id="box-hours">00</div>
+                <div class="time-label">Hrs</div>
+            </div>
+            <div class="time-divider">:</div>
+            <div class="time-block">
+                <div class="time-number" id="box-mins">00</div>
+                <div class="time-label">Min</div>
+            </div>
+            <div class="time-divider">:</div>
+            <div class="time-block">
+                <div class="time-number" id="box-secs">00</div>
+                <div class="time-label">Sec</div>
+            </div>
+        </div>
+    </div>
+
     <div class="desktop-canvas" id="main-content">
         <div class="polaroid-wrapper">
             <div class="polaroid-card" id="polaroid-card" onclick="flipPolaroid()">
@@ -430,7 +671,6 @@
 
     <div class="prank-canvas" id="prank-screen">
         <h2 class="prank-title" id="prank-instruction">Click the gift box to claim your birthday surprise!</h2>
-        
         <div class="gift-target-box" id="gift-box" onclick="handleBoxClick()">🎁</div>
 
         <div class="dialog-container" id="dialog-prompt">
@@ -455,6 +695,9 @@
     <canvas id="confetti-canvas"></canvas>
 
     <script>
+        // Target Timestamp locked to June 17, 2026 at 12:00 AM (Philippine Standard Time GMT+0800)
+        const targetBirthdayPST = new Date("June 17, 2026 00:00:00 GMT+0800").getTime();
+
         const profiles = {
             nay: {
                 title: "For Nay.",
@@ -589,7 +832,6 @@
         let boxClickCount = 0;
         let currentPromptStep = 0;
 
-        // Sequence steps array for text loops
         const prankQuestions = [
             "Would you like to open your birthday gift box? 🎁",
             "Are you absolutely sure you want to open it right now? 🤔",
@@ -598,12 +840,58 @@
             "Okay okay, processing... click one more time to finally unlock it! ✨"
         ];
 
-        function initializeView() {
-            activeProfile = profiles['nay'];
-            if (activeProfile) {
-                document.getElementById('celebrant-title').innerText = activeProfile.title;
-                renderEntry();
+        function startExperience() {
+            document.getElementById("welcome-screen").style.display = "none";
+            
+            const song = document.getElementById("birthday-song");
+            song.play().catch(e => console.log("Audio track initialized."));
+
+            const nowCheck = new Date().getTime();
+            if (nowCheck >= targetBirthdayPST) {
+                document.getElementById("main-content").style.display = "flex";
+                loadGreetings();
+            } else {
+                document.getElementById("lock-screen").style.display = "flex";
+                runClockManager();
             }
+        }
+
+        function runClockManager() {
+            countdownTicker = setInterval(() => {
+                const nowLocal = new Date().getTime();
+                const timeDistance = targetBirthdayPST - nowLocal;
+
+                const days = Math.floor(timeDistance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDistance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDistance % (1000 * 60)) / 1000);
+
+                document.getElementById("box-days").innerText = String(days).padStart(2, '0');
+                document.getElementById("box-hours").innerText = String(hours).padStart(2, '0');
+                document.getElementById("box-mins").innerText = String(minutes).padStart(2, '0');
+                document.getElementById("box-secs").innerText = String(seconds).padStart(2, '0');
+
+                if (timeDistance <= 0) {
+                    clearInterval(countdownTicker);
+                    executeBlowoutSequence();
+                }
+            }, 1000);
+        }
+
+        function executeBlowoutSequence() {
+            document.getElementById("candle-flame").style.opacity = "0";
+
+            setTimeout(() => {
+                document.getElementById("lock-screen").style.display = "none";
+                document.getElementById("main-content").style.display = "flex";
+                loadGreetings();
+            }, 1800);
+        }
+
+        function loadGreetings() {
+            activeProfile = profiles['nay'];
+            document.getElementById('celebrant-title').innerText = activeProfile.title;
+            renderEntry();
         }
 
         function renderEntry() {
@@ -646,7 +934,6 @@
         }
 
         function advanceStream() {
-            // Once Nathem's card layout is finished, transition cleanly to the Prank Canvas setup
             if (activeIndex === activeProfile.stream.length - 1) {
                 document.getElementById('main-content').style.display = 'none';
                 document.getElementById('prank-screen').style.display = 'flex';
@@ -664,22 +951,15 @@
             box.style.transform = "translate(-50%, -50%)";
         }
 
-        // Handles the moving box logic loops
         function handleBoxClick() {
             boxClickCount++;
             const box = document.getElementById('gift-box');
 
-            if (boxClickCount === 1) {
-                // Hop 1: Moves to a completely random spot on the screen
+            if (boxClickCount === 1 || boxClickCount === 2) {
                 box.style.transform = "none"; 
                 box.style.top = Math.random() * (window.innerHeight - 150) + 50 + "px";
                 box.style.left = Math.random() * (window.innerWidth - 150) + 50 + "px";
-            } else if (boxClickCount === 2) {
-                // Hop 2: Moves away dynamically again
-                box.style.top = Math.random() * (window.innerHeight - 150) + 50 + "px";
-                box.style.left = Math.random() * (window.innerWidth - 150) + 50 + "px";
             } else if (boxClickCount === 3) {
-                // Click 3: Gift box surrenders, hides instructions and reveals the stubborn confirmation modal box
                 box.style.display = 'none';
                 document.getElementById('prank-instruction').style.display = 'none';
                 
@@ -693,19 +973,15 @@
             const questionElement = document.getElementById('dialog-question');
             
             if (!isYes) {
-                // Prank loop handler: If she selects "No", mock her choices gently and keep her locked in the confirmation step loop
                 questionElement.innerText = "Wrong answer! Let's try that again. 😉 \n\n" + prankQuestions[currentPromptStep];
                 return;
             }
 
-            // If she hits "Yes", advance down the step indices array
             currentPromptStep++;
 
             if (currentPromptStep < prankQuestions.length) {
-                // Update text layout chunk
                 questionElement.innerText = prankQuestions[currentPromptStep];
             } else {
-                // Prank finishes! Shut down the overlay layer canvas maps and pull up the true surprise profile code frame
                 document.getElementById('prank-screen').style.display = 'none';
                 document.getElementById('gift-code').innerText = activeProfile.giftCode;
                 document.getElementById('reveal-screen').style.display = 'flex';
@@ -714,7 +990,7 @@
         }
 
         // ==========================================
-        // STANDARD LIGHTWEIGHT CONFETTI SIMULATOR ENGINE
+        // CONFETTI SIMULATOR ENGINE
         // ==========================================
         function initConfettiEngine() {
             const canvas = document.getElementById("confetti-canvas");
@@ -768,8 +1044,6 @@
             }
             animateConfetti();
         }
-
-        document.addEventListener("DOMContentLoaded", initializeView);
     </script>
 </body>
 </html>
